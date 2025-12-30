@@ -20,19 +20,25 @@ body {
 /* Navbar */
 .navbar {
   width: 100%;
-    color: rgb(17, 42, 205);
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* left align */
+  align-items: center;
+  padding: 1rem 2rem;
+  color: rgb(17, 42, 205);
 }
 
 .nav-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: left;
+  gap: 2rem;
   height: 62px;
   position: relative;
   width: 100%;
-  overflow: visible; /* prevents clipping */
+}
+
+.logo {
+  margin-right: 2rem;
 }
 
 /* Nav links */
@@ -60,7 +66,6 @@ body {
   height: 48px;   /* bigger so X fits */
   width: 48px;
   top: 10px;
-  left: 15px;
   z-index: 40;
   opacity: 0;
   cursor: pointer;
@@ -75,8 +80,6 @@ body {
   height: 48px;   /* matches checkbox */
   width: 48px;
   position: absolute;
-  top: 10px;
-  left: 15px;
   z-index: 35;
   cursor: pointer;
   overflow: visible;
@@ -96,13 +99,13 @@ body {
   transition: transform 0.2s ease, opacity 0.15s ease;
 }
 
-/* Fullscreen menu */
+
 .navbar .menu-items {
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
-  width: 100vw;
+  width: 20vw; /* Adjusted width of sidebar */
   background: #fff;
   transform: translateX(-100%);
   display: flex;
@@ -148,4 +151,17 @@ body {
 
 .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
   transform: translateY(-15px) rotate(-45deg);
+}
+
+/* push page content when sidebar opens */
+.menu-open .page-content {
+  transform: translateX(20vw); /* same width as your sidebar */
+  width: calc(100% - 20vw);
+  transition: transform 0.5s ease-in-out, width 0.5s ease-in-out;
+  overflow-x: hidden;
+}
+
+/* optionally prevent body horizontal scroll while open */
+.menu-open {
+  overflow: hidden;
 }
