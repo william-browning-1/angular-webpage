@@ -1,0 +1,95 @@
+/* You can add global styles to this file, and also import other style files */
+/* ===========================
+   Global Reset
+   =========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+/* ===========================
+   CSS Variables (Theme)
+   =========================== */
+
+:root {
+  --bg-color: rgb(2, 8, 50);
+  --snd-bg-color: rgba(0, 0, 0, 0.176);
+  --main-color: rgb(17, 42, 205);
+  --snd-bf-color: rgba(74, 74, 74, 0.1);
+}
+
+/* ===========================
+   Base Typography
+   =========================== */
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--bg-color);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===========================
+   Global Element Defaults
+   =========================== */
+
+a {
+  color: inherit;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===========================
+   Shared Utilities
+   =========================== */
+
+span {
+  color: var(--main-color);
+}
+
+section {
+  min-height: 100vh;
+  padding: 5rem 9%;
+}
+
+.heading {
+  text-align: center;
+  font-size: 4.5rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2.8rem;
+  background-color: var(--bg-color);
+  border-radius: 4rem;
+  font-size: 1.6rem;
+  color: var(--main-color);
+  letter-spacing: 0.3rem;
+  font-weight: 600;
+  border: 2px solid var(--main-color);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--main-color);
+  color: white;
+  transform: scale(1.03);
+  box-shadow: 0 0 25px var(--main-color);
+}

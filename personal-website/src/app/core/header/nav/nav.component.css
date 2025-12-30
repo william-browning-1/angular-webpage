@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Container */
+.container {
+  max-width: 1050px;
+  width: 90%;
+  margin: auto;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+    color: rgb(17, 42, 205);
+  display: flex;
+  justify-content: center;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 62px;
+  position: relative;
+  width: 100%;
+  overflow: visible; /* prevents clipping */
+}
+
+/* Nav links */
+.navbar .nav-container li {
+  list-style: none;
+}
+
+.navbar .nav-container a {
+  text-decoration: none;
+  color: rgb(17, 42, 205);
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+  cursor: pointer;
+}
+
+.navbar .nav-container a:hover {
+  font-weight: bolder;
+}
+
+/* Checkbox (menu toggle) */
+.nav-container .checkbox {
+  position: absolute;
+  display: block;
+  height: 48px;   /* bigger so X fits */
+  width: 48px;
+  top: 10px;
+  left: 15px;
+  z-index: 40;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Hamburger menu */
+.nav-container .hamburger-lines {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 48px;   /* matches checkbox */
+  width: 48px;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  z-index: 35;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.nav-container .hamburger-lines .line {
+  display: block;
+  height: 4px;
+  width: 32px;
+  border-radius: 4px;
+  background: rgb(17, 42, 205);
+  transition: transform 0.35s ease, opacity 0.25s ease;
+  transform-origin: center;
+}
+
+.nav-container .hamburger-lines .line2 {
+  transition: transform 0.2s ease, opacity 0.15s ease;
+}
+
+/* Fullscreen menu */
+.navbar .menu-items {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: #fff;
+  transform: translateX(-100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease-in-out;
+  text-align: center;
+  z-index: 10;
+}
+
+.navbar .menu-items li {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  list-style: none;
+}
+
+/* Logo always visible */
+.logo {
+  font-size: 3rem;
+  color: rgb(17, 42, 205);
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.5s ease;
+  text-decoration: none;
+}
+
+/* Toggle menu open */
+.nav-container input[type="checkbox"]:checked ~ .menu-items {
+  transform: translateX(0);
+}
+
+/* Hamburger to X */
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+  transform: translateY(17px) rotate(45deg);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+  transform: scaleX(0);
+  opacity: 0;
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+  transform: translateY(-15px) rotate(-45deg);
+}
