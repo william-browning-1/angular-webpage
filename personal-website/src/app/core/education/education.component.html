@@ -1,1 +1,50 @@
-<p>education works!</p>
+<section class="education-section">
+
+<div class="degree-header">
+    <p>University of Memphis</p>
+
+    <h2>B.S. Computer Science</h2>
+    <span class="second-major">with Second Major in Mathematics</span>
+    <!-- Optional: add graduation year or GPA here -->
+    <!-- <p class="details">Expected Graduation: May 2026 • GPA: 3.8</p> -->
+</div>
+
+  <!-- Filters -->
+  <div class="course-filters">
+    <button
+      (click)="setFilter('all')"
+      [class.active]="activeFilter === 'all'">
+      All
+    </button>
+
+    <button
+      (click)="setFilter('core')"
+      [class.active]="activeFilter === 'core'">
+      Core CS
+    </button>
+
+    <button
+      (click)="setFilter('systems')"
+      [class.active]="activeFilter === 'systems'">
+      Systems
+    </button>
+
+    <button
+      (click)="setFilter('networking')"
+      [class.active]="activeFilter === 'networking'">
+      Networking
+    </button>
+  </div>
+
+  <!-- Course Cards -->
+
+  <div class="course-grid">
+  <app-widget
+    *ngFor="let course of filteredCourses"
+    [category]="course">
+  </app-widget>
+</div>
+
+
+
+</section>

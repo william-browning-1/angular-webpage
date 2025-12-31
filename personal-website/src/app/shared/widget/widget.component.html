@@ -1,0 +1,29 @@
+<!-- src/app/shared/widgets/widget.component.html -->
+<div 
+  class="card-session" 
+  [class.big]="isExpanded"
+  (click)="toggleExpand()"
+  role="button"
+  tabindex="0"
+  (keydown.enter)="toggleExpand()"
+  (keydown.space)="toggleExpand(); $event.preventDefault()"
+>
+  <div class="card-date-label">
+    <!-- We adapt the "date" part to show course code instead -->
+    <div class="date-session" [class.big]="isExpanded">
+      <p class="date-jour">{{ category.code }}</p>
+      <!-- Optional: add semester/year if you have it -->
+    </div>
+
+    <!-- Category badge -->
+    <p class="categorie-session">{{ category.category }}</p>
+  </div>
+
+  <!-- Title as main header -->
+  <h3 [class.big]="isExpanded">{{ category.title }}</h3>
+
+  <!-- Description - shown only when expanded -->
+  <div class="card-description" [class.big]="isExpanded">
+    <p [class.big]="isExpanded">{{ category.description }}</p>
+  </div>
+</div>

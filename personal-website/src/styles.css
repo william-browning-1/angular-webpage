@@ -17,9 +17,10 @@
    =========================== */
 
 :root {
-  --bg-color: rgb(2, 8, 50);
+  --bg-color: #193059;
   --snd-bg-color: rgba(0, 0, 0, 0.176);
   --main-color: white;
+  --snd-main-color: #00498f;
   --snd-bf-color: rgba(74, 74, 74, 0.1);
   --sidebar-collapsed-width: 60px;
   --sidebar-expanded-width: 250px;
@@ -51,6 +52,17 @@ body {
 /* ===========================
    Global Element Defaults
    =========================== */
+.app-content {
+  margin-left: var(--sidebar-collapsed);
+  padding: 4rem;
+  min-height: 100vh;
+  transition: margin-left 0.15s ease;
+}
+
+/* When sidebar expands */
+.main-menu:hover ~ .app-content {
+  margin-left: var(--sidebar-expanded);
+}
 
 a {
   color: inherit;
@@ -71,8 +83,8 @@ span {
 }
 
 section {
-  min-height: 100vh;
-  padding: 5rem 9%;
+  min-height: calc(100vh - 8rem);
+  padding: 4rem;
 }
 
 .heading {
