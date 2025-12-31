@@ -21,6 +21,8 @@
   --snd-bg-color: rgba(0, 0, 0, 0.176);
   --main-color: white;
   --snd-bf-color: rgba(74, 74, 74, 0.1);
+  --sidebar-collapsed-width: 60px;
+  --sidebar-expanded-width: 250px;
 }
 
 /* ===========================
@@ -38,6 +40,12 @@ body {
   background-color: var(--bg-color);
   color: white;
   font-family: 'Poppins', sans-serif;
+}
+
+.app-content {
+  margin-left: var(--sidebar-collapsed-width);
+  min-height: 100vh;
+  transition: margin-left 0.15s ease;
 }
 
 /* ===========================

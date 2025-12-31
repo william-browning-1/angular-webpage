@@ -13,8 +13,9 @@ export class NavComponent {
 
   menuItems = [
     { label: 'Home', icon: 'fa-home', link: '/' },
-    { label: 'Contact', icon: 'fa-comments', link: '/contact' },
     { label: 'Education', icon: 'fa-book', link: '/education' },
+    { label: 'Experience', icon: 'fa-laptop', link: '/experience' },
+    { label: 'Contact', icon: 'fa-comments', link: '/contact' },
     { label: 'Docs', icon: 'fa-info', link: '/docs' }
   ];
 
