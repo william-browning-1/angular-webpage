@@ -19,7 +19,7 @@
 :root {
   --bg-color: rgb(2, 8, 50);
   --snd-bg-color: rgba(0, 0, 0, 0.176);
-  --main-color: rgb(17, 42, 205);
+  --main-color: white;
   --snd-bf-color: rgba(74, 74, 74, 0.1);
 }
 
