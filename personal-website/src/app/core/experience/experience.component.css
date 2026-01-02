@@ -1,0 +1,118 @@
+header {
+    position: fixed;        /* stays at the top of the page */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;       /* horizontal padding for spacing */
+    backdrop-filter: blur(5px);           /* soft blur behind header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;          /* above all cards */
+    margin-top: 0;           /* remove any margin */
+}
+
+.logo {
+    font-size: 3rem;
+    color: var(--snd-main-color);
+    text-shadow:
+        0 0 2px white,
+        0 0 4px white,
+        0 0 8px white;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+
+.options {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  overflow: hidden;
+  min-width: 600px;
+  max-width: 900px;
+  width: calc(100% - 100px);
+  height: 400px;
+}
+
+.option {
+  position: relative;
+  overflow: hidden;
+  max-height: 1000rem;
+  min-width: 60px;
+  margin: 10px;
+  background: var(--snd-main-color);
+  background-size: auto 120%;
+  background-position: center;
+  cursor: pointer;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  border-radius: 30px;
+  flex-grow: 1;
+  max-width: 100px;
+}
+
+.option.active {
+  flex-grow: 10;
+  max-width: 600px;
+  margin: 0;
+  border-radius: 40px;
+  background-size: auto 100%;
+}
+
+.shadow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.label {
+  display: flex;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  height: 40px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 40px;
+  max-width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: white;
+  color: black;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+  color: white;
+}
+
+.info .main {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.info .sub {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.credit {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
