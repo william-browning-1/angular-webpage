@@ -1,6 +1,9 @@
+
+<div class="page-layout">
 <section class="education-section">
 
 <div class="degree-header">
+  <img class="memphis-logo"src="assets/images/Memphis_Tigers_logo.png" alt="University of Memphis Banner">
     <p>University of Memphis</p>
 
     <h2>B.S. Computer Science</h2>
@@ -9,32 +12,37 @@
     <!-- <p class="details">Expected Graduation: May 2026 • GPA: 3.8</p> -->
 </div>
 
-  <!-- Filters -->
-  <div class="course-filters">
-    <button
-      (click)="setFilter('all')"
-      [class.active]="activeFilter === 'all'">
-      All
-    </button>
+  <!-- Clickable Info -->
+<div class="course-info">
+  <span class="clickable-text">Click a card for more details</span>
+</div>
 
-    <button
-      (click)="setFilter('core')"
-      [class.active]="activeFilter === 'core'">
-      Core CS
-    </button>
+<!-- Filters -->
+<div class="course-filters">
+  <button
+    (click)="setFilter('all')"
+    [class.active]="activeFilter === 'all'">
+    All
+  </button>
 
-    <button
-      (click)="setFilter('systems')"
-      [class.active]="activeFilter === 'systems'">
-      Systems
-    </button>
+  <button
+    (click)="setFilter('core')"
+    [class.active]="activeFilter === 'core'">
+    Core CS
+  </button>
 
-    <button
-      (click)="setFilter('networking')"
-      [class.active]="activeFilter === 'networking'">
-      Networking
-    </button>
-  </div>
+  <button
+    (click)="setFilter('systems')"
+    [class.active]="activeFilter === 'systems'">
+    Systems
+  </button>
+
+  <button
+    (click)="setFilter('math')"
+    [class.active]="activeFilter === 'math'">
+    Math
+  </button>
+</div>
 
   <!-- Course Cards -->
 
@@ -48,3 +56,18 @@
 
 
 </section>
+<section class="right-panel">
+  <h3 class="skills-header">Technical Skills and Applications</h3>
+  <ol class="skills-timeline">
+    <li *ngFor="let skill of skills">
+      <span class="skill-badge">
+        <i [class]="skill.icon"></i>
+      </span>
+
+      <div class="skill-card">
+        {{ skill.name }}
+      </div>
+    </li>
+  </ol>
+</section>
+</div>

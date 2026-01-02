@@ -10,6 +10,7 @@
   width: 95%;
   margin: 0 auto;
   padding: 60px 0;
+  max-width: calc(100vw - var(--sidebar-expanded));
 }
 
 .card-session {
@@ -128,6 +129,7 @@ h3 {
   z-index: 10;
   transform: translateY(-20px);
   box-shadow: 0 4px 12px white;
+  max-width: calc(100vw - var(--sidebar-expanded) - 80px);
 }
 
 .date-session.big {

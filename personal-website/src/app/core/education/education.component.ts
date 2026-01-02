@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { COURSES } from './courses';
 import { Category, WidgetComponent } from '../../shared/widget/widget.component';
+import { Skill, SKILLS } from './skills';
 
 @Component({
   selector: 'app-education',
@@ -10,6 +11,7 @@ import { Category, WidgetComponent } from '../../shared/widget/widget.component'
   styleUrls: ['./education.component.css']
 })
 export class EducationComponent {
+  skills: Skill[] = SKILLS;
   courses: Category[] = COURSES;
   activeFilter = 'all';
 
