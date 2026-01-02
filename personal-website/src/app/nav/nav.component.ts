@@ -16,8 +16,8 @@ export class NavComponent {
     { label: 'Education', icon: 'fa-book', link: '/education' },
     { label: 'Experience', icon: 'fa-laptop', link: '/experience' },
     { label: 'About', icon: 'fa-user', link: '/about' },
-    { label: 'Contact', icon: 'fa-comments', link: '/contact' },
-    { label: 'Docs', icon: 'fa-info', link: '/docs' }
+    { label: 'Projects', icon: 'fa-diagram-project', link: '/projects' },
+    // { label: 'Docs', icon: 'fa-info', link: '/docs' }
   ];
 
   // logoutItem = {

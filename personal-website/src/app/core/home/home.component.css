@@ -1,0 +1,224 @@
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--bg-color);
+    color: white;
+}
+
+header{
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 3rem;
+    color: var(--snd-main-color);
+    text-shadow:
+        0 0 2px white,
+        0 0 4px white,
+        0 0 8px white;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+section{
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.home .home-content h1{
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+span {
+    color: var(--snd-main-color);
+    text-shadow:
+        0 0 2px white,
+        0 0 4px white,
+        0 0 8px white;
+}
+
+.home-content p{
+    font-size: 1.6rem;
+}
+
+.home-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex: 0 0 40%;   /* image gets 40% */
+    margin-right: 0; /* REMOVE this */
+    transform: translateX(-10rem);
+}
+
+.home-img img {
+    width: auto;
+    height: auto;
+    max-width: 450px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--bg-color);
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.home-content {
+    margin-top: 0;
+    align-items: center;
+    width: 100%;
+    flex: 0 0 60%;   /* text gets 60% */
+    max-width: none; /* IMPORTANT */
+}
+
+.home-img img:hover{
+    transform: scale(1.1);
+}
+.home-content p{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.social-icon a{
+    display: inline-flex;
+    justify-content: center;
+    box-shadow: 0 2px 8px var(--memphis-grey);
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: .2rem solid white;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: white;
+}
+
+.social-icon a:hover{
+    color: var(--bg-color);
+    transform: scale(1.3) translateY(-5px);
+    color: white;
+    box-shadow: 0 0 25px white;
+    background-color: var(--snd-main-color);
+}
+
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: var(--bg-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: white;
+    letter-spacing: .3rem;
+    font-weight: 600;
+    border: 2px solid white;
+    transition: 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 8px var(--memphis-grey);
+}
+.btn:hover{
+    background-color: var(--snd-main-color);
+    color: white;
+    transform: scale3d(1.03);
+    background-color: var(--snd-main-color);
+    box-shadow: 0 0 25px white;
+}
+
+.typing-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text span{
+    position:relative;
+}
+.typing-text span::before{
+    content: "Software Engineer";
+    color: var(--snd-main-color);
+    animation: words 17s infinite;
+}
+
+.home-content p {
+    margin-top: 1.5rem;
+}
+
+
+
+@keyframes cursor {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+
+
+@keyframes words{
+    0%, 20%{ 
+        content: "Software Engineer"; 
+    }
+    21%, 40%{ 
+        content: "Web Developer"; 
+    }
+    41%, 60%{ 
+        content: "Data Engineer"; 
+    }
+    61%, 80%{ 
+        content: "CS and Math Major"; 
+    }
+    81%, 100%{ 
+        content: "AI Architect"; 
+    }
+}
+@media(max-width: 1000px){
+    .home{
+        gap: 4rem;
+    }
+}
+
+@media( max-width: 995px){
+    .home{
+        flex-direction: column;
+        margin:5rem 4rem;
+        align-items: center;
+    }
+    .home .home-content h3{
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+    }
+
+    .home-img img{
+        width: 100%;
+        margin-top: 4rem;
+    }
+}

@@ -7,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-
+  downloadResume() {
+  const link = document.createElement('a');
+  link.href = 'assets/wb.pdf';
+  link.download = 'wb_resume.pdf';
+  link.target = '_blank';
+  link.click();
+}
 }
