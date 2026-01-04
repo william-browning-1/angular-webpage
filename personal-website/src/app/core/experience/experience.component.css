@@ -1,118 +1,221 @@
-header {
-    position: fixed;        /* stays at the top of the page */
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem 9%;       /* horizontal padding for spacing */
-    backdrop-filter: blur(5px);           /* soft blur behind header */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;          /* above all cards */
-    margin-top: 0;           /* remove any margin */
+/* ================= HEADER ================= */
+
+.timeline-header {
+  font-size: 3.5rem;
+  color: var(--snd-main-color);
+  text-shadow:
+    0 0 2px white,
+    0 0 6px white;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: sticky;
+  top: 0;                /* sticks to the top of the timeline-column */
+  background: var(--main-bg-color);  /* matches the background color */
+  z-index: 5;            /* above the cards when scrolling */
+  padding: 1rem 0;       /* optional, keeps spacing around the text */
 }
 
-.logo {
-    font-size: 3rem;
-    color: var(--snd-main-color);
-    text-shadow:
-        0 0 2px white,
-        0 0 4px white,
-        0 0 8px white;
-    font-weight: 800;
-    cursor: pointer;
-    transition: 0.5s ease;
-}
+/* ================= LAYOUT ================= */
 
-.logo:hover {
-    transform: scale(1.1);
-}
-
-
-.options {
+.experience-layout {
   display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  overflow: hidden;
-  min-width: 600px;
-  max-width: 900px;
-  width: calc(100% - 100px);
-  height: 400px;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 6rem;
 }
 
-.option {
+.timeline-column {
+  width: 30%;
+  padding: 0.25rem 2rem 2rem 3rem;
+  position: sticky;
+  top: 6rem;
+  height: calc(100vh - 6rem);
+  overflow-y: auto;
+  transform: translateY(-60px);
+}
+
+.details-column {
+  width: 70%;
+  padding: 3rem;
+}
+
+/* ================= SCROLLBAR ================= */
+
+.timeline-column::-webkit-scrollbar {
+  width: 6px;
+}
+
+.timeline-column::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+}
+
+/* ================= TIMELINE ================= */
+
+.timeline {
   position: relative;
-  overflow: hidden;
-  max-height: 1000rem;
-  min-width: 60px;
-  margin: 10px;
-  background: var(--snd-main-color);
-  background-size: auto 120%;
-  background-position: center;
-  cursor: pointer;
-  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
-  border-radius: 30px;
-  flex-grow: 1;
-  max-width: 100px;
-}
-
-.option.active {
-  flex-grow: 10;
-  max-width: 600px;
+  list-style: none;
   margin: 0;
-  border-radius: 40px;
-  background-size: auto 100%;
+  padding: 1rem 0;
 }
 
-.shadow {
+.timeline::before {
+  content: "";
   position: absolute;
-  bottom: 0;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    white,
+    transparent
+  );
+  border-radius: 2px;
+}
+
+/* ================= TIMELINE ITEMS ================= */
+
+.timeline li {
+  position: relative;
+  width: 50%;
+  padding: 1.75rem 2rem;
+  box-sizing: border-box;
+}
+
+
+/* LEFT / RIGHT POSITIONING */
+
+.timeline li.left {
   left: 0;
-  right: 0;
-  height: 120px;
-  box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
-  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  text-align: right;
 }
 
-.label {
-  display: flex;
+.timeline li.left .timeline-card {
+  margin-left: auto;
+}
+
+.timeline li.right {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline li.right .timeline-card {
+  margin-right: auto;
+}
+
+/* ================= DOT ================= */
+
+.timeline-dot {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  height: 40px;
+  top: 2.2rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--snd-main-color);
+  border: 3px solid white;
+  z-index: 3;
 }
 
-.icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 40px;
-  max-width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  background-color: white;
-  color: black;
+.timeline li.left .timeline-dot {
+  right: -7px;
 }
 
-.info {
+.timeline li.right .timeline-dot {
+  left: -7px;
+}
+
+/* ================= CARD ================= */
+
+.timeline-card {
+  background: var(--snd-main-color);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  max-width: 340px;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin-left: 10px;
+  justify-content: space-between;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 120px;   /* replaces 10vh */
+  padding: 1.25rem 1.4rem;
+}
+
+.timeline-card:hover {
+  box-shadow: 0 4px 16px white;
+  cursor: pointer;
+}
+
+.timeline li.left:hover .timeline-card {
+  transform: translateX(-6px);
+}
+
+.timeline li.right:hover .timeline-card {
+  transform: translateX(6px);
+}
+
+/* ================= CARD CONTENT ================= */
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.role {
+  margin: 0;
+  font-size: 1.35rem;   /* was 1rem */
+  font-weight: 800;
+  color: white;
+  line-height: 1.25;
+}
+
+.company {
+  margin: 0;
+  font-size: 1.05rem;   /* was 0.85rem */
+  font-weight: 500;
+  opacity: 0.95;
   color: white;
 }
 
-.info .main {
-  font-weight: bold;
-  font-size: 1.2rem;
+
+/* ================= CARD FOOTER (DATE) ================= */
+
+.card-footer {
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
 }
 
-.info .sub {
-  font-size: 1rem;
-  opacity: 0.8;
+.date {
+  font-size: 0.85rem;
+  color: white;
+  letter-spacing: 0.03em;
+
+  text-shadow:
+    0 0 2px rgba(0, 0, 0, 0.8),
+    0 0 6px rgba(0, 0, 0, 0.6);
 }
 
-.credit {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
+/* ================= ACTIVE STATE ================= */
+
+.timeline li.active .timeline-dot {
+  background: white;
+  border-color: white;
+  box-shadow:
+    0 0 0 3px var(--snd-main-color),
+    0 0 12px rgba(255, 255, 255, 0.6);
+}
+
+.timeline li.active .timeline-card {
+  box-shadow: 0 4px 16px white;
+}
+
+.timeline li.active .role {
+  color: white;
 }
