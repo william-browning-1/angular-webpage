@@ -2,119 +2,55 @@ export interface Experience {
   role: string;
   company: string;
   dates: string;
+  type: 'project' | 'position'; // 👈 NEW
   responsibilities: string[];
-  icon?: string; // optional, for your top icon
+  icon?: string;
 }
 
 export const experiences: Experience[] = [
   {
-    role: 'Software Engineer Co-op',
-    company: 'FedEx',
-    dates: 'Jan 2025 – Present',
+    role: 'Project Member',
+    company: 'Center for Information Assurance, Memphis, TN',
+    dates: 'March 2025 – May 2025',
+    type: 'position',
     responsibilities: [
-      'Built and supported production-level systems.',
-      'Developed AI-driven tools to automate tasks.',
-      'Collaborated with cross-functional teams on software improvements.',
+      'Supported development of a deep learning–based autonomous driving system for an R/C vehicle.',
+      'Presented weekly progress updates and technical challenges to professors and project mentor.'
     ],
-    icon: 'fas fa-laptop-code'
+    icon: 'fas fa-microchip'
   },
   {
-    role: 'Web Developer Intern',
-    company: 'Tech Startup',
-    dates: 'Jun 2024 – Aug 2024',
+    role: 'Air Operations Co-Op II',
+    company: 'FedEx Express — Air Operations',
+    dates: 'June 1, 2025',
+    type: 'position',
     responsibilities: [
-      'Created responsive web applications.',
-      'Implemented user authentication and dashboards.',
-      'Participated in code reviews and agile sprints.',
+      'Joined FedEx Air Operations as a Data & Analytics Co-Op supporting operational reliability and decision-making initiatives.'
     ],
-    icon: 'fas fa-code'
+    icon: 'fas fa-plane'
   },
   {
-    role: 'Data Analyst',
-    company: 'Retail Corp',
-    dates: 'Jan 2024 – May 2024',
+    role: 'Ground Time Weather Analysis',
+    company: 'FedEx Express — Air Operations',
+    dates: 'Fall 2025',
+    type: 'project',
     responsibilities: [
-      'Analyzed sales and inventory data.',
-      'Created automated reports for management.',
-      'Performed data cleansing and validation.',
+      'Pulled hourly NOAA weather data via FTP/API.',
+      'Engineered weather and flight datasets to analyze long-term operational impacts.',
+      'Visualized trends in Power BI.'
     ],
-    icon: 'fas fa-chart-line'
+    icon: 'fas fa-cloud-sun'
   },
   {
-    role: 'Machine Learning Intern',
-    company: 'AI Solutions Inc.',
-    dates: 'Jun 2023 – Aug 2023',
+    role: 'AI AMM Audits',
+    company: 'FedEx Express — Air Operations',
+    dates: 'Summer 2025',
+    type: 'project',
     responsibilities: [
-      'Built predictive models for customer behavior.',
-      'Worked with Python and TensorFlow.',
-      'Presented insights to stakeholders.',
+      'Designed and built an AI-driven auditing tool to identify incorrect Aircraft Maintenance Manual (AMM) reference codes.',
+      'Leveraged AI prompt databases with Databricks SQL and AI_GEN.',
+      'Delivered results through Power BI dashboards.'
     ],
     icon: 'fas fa-robot'
   },
-  {
-    role: 'Research Assistant',
-    company: 'University of Memphis',
-    dates: 'Sep 2022 – Dec 2023',
-    responsibilities: [
-      'Assisted in computer vision research projects.',
-      'Implemented experiments and collected results.',
-      'Prepared reports and presentations for professors.',
-    ],
-    icon: 'fas fa-flask'
-  },
-  {
-    role: 'IT Support Technician',
-    company: 'Campus IT Services',
-    dates: 'Jan 2022 – Aug 2022',
-    responsibilities: [
-      'Troubleshot hardware and software issues.',
-      'Managed student tech requests.',
-      'Assisted in network setup and maintenance.',
-    ],
-    icon: 'fas fa-desktop'
-  },
-  {
-    role: 'Frontend Developer',
-    company: 'Freelance',
-    dates: 'Jun 2021 – Dec 2021',
-    responsibilities: [
-      'Designed and implemented client websites.',
-      'Worked with HTML, CSS, and JavaScript frameworks.',
-      'Collaborated with clients to gather requirements.',
-    ],
-    icon: 'fas fa-paint-brush'
-  },
-  {
-    role: 'Cybersecurity Intern',
-    company: 'SecureTech',
-    dates: 'Jun 2020 – Aug 2020',
-    responsibilities: [
-      'Performed security audits and vulnerability assessments.',
-      'Monitored network traffic and logs.',
-      'Documented security procedures and recommendations.',
-    ],
-    icon: 'fas fa-shield-alt'
-  },
-  {
-    role: 'Teaching Assistant',
-    company: 'University of Memphis',
-    dates: 'Jan 2020 – May 2020',
-    responsibilities: [
-      'Assisted in CS101 labs and tutorials.',
-      'Graded assignments and exams.',
-      'Held office hours to support students.',
-    ],
-    icon: 'fas fa-chalkboard-teacher'
-  },
-  {
-    role: 'Junior Developer',
-    company: 'Local Software Firm',
-    dates: 'Jun 2019 – Dec 2019',
-    responsibilities: [
-      'Maintained internal tools and scripts.',
-      'Fixed bugs and implemented minor features.',
-      'Collaborated with senior developers on projects.',
-    ],
-    icon: 'fas fa-code-branch'
-  }
 ];

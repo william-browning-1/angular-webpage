@@ -182,19 +182,19 @@ span {
 
 @keyframes words{
     0%, 20%{ 
-        content: "Software Engineer"; 
+        content: "a Software Engineer"; 
     }
     21%, 40%{ 
-        content: "Web Developer"; 
+        content: "a Web Developer"; 
     }
     41%, 60%{ 
-        content: "Data Engineer"; 
+        content: "a Data Engineer"; 
     }
     61%, 80%{ 
-        content: "CS and Math Major"; 
+        content: "a CS and Math Major"; 
     }
     81%, 100%{ 
-        content: "AI Architect"; 
+        content: "an AI Architect"; 
     }
 }
 @media(max-width: 1000px){

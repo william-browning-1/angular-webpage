@@ -16,7 +16,6 @@ export class NavComponent {
     { label: 'Education', icon: 'fa-book', link: '/education' },
     { label: 'Experience', icon: 'fa-laptop', link: '/experience' },
     { label: 'About', icon: 'fa-user', link: '/about' },
-    { label: 'Projects', icon: 'fa-diagram-project', link: '/projects' },
     // { label: 'Docs', icon: 'fa-info', link: '/docs' }
   ];
 

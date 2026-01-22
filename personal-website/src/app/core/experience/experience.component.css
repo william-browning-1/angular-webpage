@@ -17,7 +17,6 @@
 }
 
 /* ================= LAYOUT ================= */
-
 .experience-layout {
   display: flex;
   width: 100%;
@@ -185,11 +184,20 @@
 
 
 /* ================= CARD FOOTER (DATE) ================= */
-
 .card-footer {
   margin-top: 1rem;
   padding-top: 0.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.25);
+
+  display: flex;
+  justify-content: space-between; /* puts date and type on opposite sides */
+  align-items: center;
+}
+
+.timeline-type {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
 }
 
 .date {
@@ -218,4 +226,32 @@
 
 .timeline li.active .role {
   color: white;
+}
+
+.timeline-type {
+  display: inline-block;
+  margin-left: 1em; /* space from date */
+  font-size: 0.75em;
+  font-weight: 600;
+  color: white;
+  text-shadow:
+    0 0 2px black,
+    0 0 6px black;
+}
+
+.direction-l .timeline-type {
+  right: calc(100% + 10px); /* places it just left of the card */
+  text-align: right;
+}
+
+.direction-r .timeline-type {
+  left: calc(100% + 10px); /* places it just right of the card */
+  text-align: left;
+}
+
+.details-column{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
 }

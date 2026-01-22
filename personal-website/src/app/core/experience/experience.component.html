@@ -3,7 +3,7 @@
   <!-- LEFT TIMELINE -->
   <aside class="timeline-column">
 
-    <h2 class="timeline-header">Experience and Project Timeline</h2>
+    <h2 class="timeline-header">Projects and Positions Timeline</h2>
 
     <ul class="timeline">
       <li
@@ -13,6 +13,7 @@
         [class.active]="i === activeIndex"
         (click)="setActive(i)"
       >
+
         <span class="timeline-dot"></span>
 
         <div class="timeline-card">
@@ -23,8 +24,11 @@
 
           <div class="card-footer">
             <span class="date">{{ exp.dates }}</span>
+            <!-- Project/Position type on opposite side inside footer -->
+            <span class="timeline-type">{{ exp.type | titlecase }}</span>
           </div>
         </div>
+
       </li>
     </ul>
 

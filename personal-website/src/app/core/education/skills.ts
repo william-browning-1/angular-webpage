@@ -10,7 +10,7 @@ export const SKILLS: Skill[] = [
   { name: 'Databricks', icon: 'fa-solid fa-layer-group' },
   { name: 'Power BI', icon: 'fa-solid fa-chart-column' },
   { name: 'Power Apps', icon: 'fa-solid fa-bolt' },
-
+  { name: 'Hugging Face', icon: 'fa-brands fa-huggingface' },
   { name: 'Angular', icon: 'devicon-angular-plain' },
   { name: 'Azure', icon: 'devicon-azure-plain' },
   { name: 'Rails', icon: 'devicon-rails-plain' },
